@@ -31,6 +31,8 @@ char		*ft_tetro_str(int fd)
 		{
 			str[i] = c;
 			++i;
+			if (i > 545)
+				return (0);
 			rev = read(fd, &c, 1);
 		}
 		str[i] = '\0';

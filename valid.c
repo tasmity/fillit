@@ -76,8 +76,9 @@ int			ft_valid_str(char *tetro)
 		return (0);
 	while (tetro[i + j] != '\0')
 	{
-		if (!(ft_valid_tetro(tetro, j) && ft_valid_char(tetro, j)))
-			return (0);
+		if ((!(ft_valid_tetro(tetro, j) && ft_valid_char(tetro, j))) ||
+			ft_count_tetro(tetro) > 26)
+				return (0);
 		i = 19;
 		if (tetro[i + j] == '\n' && tetro[i + j + 1] == '\0')
 			return (1);
